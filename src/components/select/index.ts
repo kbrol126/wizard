@@ -41,8 +41,7 @@ export function initSelect() {
       <option value="opcion1" class="opcion_select">Opcion1</option>
       <option value="opcion2" class="opcion_select">Opcion2</option>
       <option value="opcion3" class="opcion_select">Opcion3</option>
-      <option value="opcion4" class="opcion_select">Opcion4</option>
-      <option value="opcion5" class="opcion_select">Opcion5</option>
+     
      `;
       selectEl.appendChild(styleEl);
       //agrego elementos al shadow

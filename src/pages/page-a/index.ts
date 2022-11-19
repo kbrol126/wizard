@@ -34,6 +34,11 @@ export function initPageA(params) {
   <footer-comp></footer-comp>
 
    `;
+  const headerComp = div
+    .querySelector("header-comp")
+    ?.shadowRoot?.querySelector("header");
+
+  console.log(headerComp);
 
   // div.addEventListener("click", () => {
   //   params.goTo("/page-b");
