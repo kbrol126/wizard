@@ -1,0 +1,15 @@
+{
+  "name": "pages-and-components",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel build"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "kbrol126 <nahu_sank06@hotmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^2.8.0"
+  }
+}
