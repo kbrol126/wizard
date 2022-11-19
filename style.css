@@ -1,9 +1,5 @@
-.sda {;}
-min-height: 61px
-width:100%
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 700;
-font-size: 52px;
-line-height: 61px;
-color: #000000;
+*{
+    margin: 0;
+    box-sizing: border-box;
+   
+}
