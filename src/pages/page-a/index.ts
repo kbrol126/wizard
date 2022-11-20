@@ -13,9 +13,16 @@ export function initPageA(params) {
   <footer-comp></footer-comp>
 
    `;
+  (function () {
+    const header = document
+      .querySelector("body > div > div > header-comp")
+      ?.shadowRoot?.querySelector(".header");
+    console.log(header);
+  })();
 
   // div.addEventListener("click", () => {
   //   params.goTo("/page-b");
   // });
+
   return div;
 }
