@@ -6,9 +6,10 @@ export function initSubitulo() {
     }
     render() {
       var shadow = this.attachShadow({ mode: "open" });
-
+      var variant =
+        this.getAttribute("variant") || "Subtítulo - Poppins - 38px - Bold";
       var subTituloEl = document.createElement("h2");
-      subTituloEl.textContent = "Subtítulo - Poppins - 38px - Bold";
+      subTituloEl.textContent = variant;
       subTituloEl.setAttribute("class", "subtitulo");
       var stylesubTituloEl = document.createElement("style");
       stylesubTituloEl.textContent =

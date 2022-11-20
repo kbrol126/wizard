@@ -6,9 +6,10 @@ export function initH3() {
     }
     render() {
       var shadow = this.attachShadow({ mode: "open" });
-
+      var variant =
+        this.getAttribute("variant") || "Large - Poppins - 22px  - Medium";
       var h3El = document.createElement("h3");
-      h3El.textContent = "Large - Poppins - 22px  - Medium";
+      h3El.textContent = variant;
       h3El.setAttribute("class", "h3-comp");
       var styleh3El = document.createElement("style");
       styleh3El.textContent =

@@ -6,6 +6,7 @@ export function initSelect() {
     }
     render() {
       var shadow = this.attachShadow({ mode: "open" });
+      var variant = this.getAttribute("variant") || "label";
       //creo div contenedor
       var divEl = document.createElement("div");
       divEl.setAttribute("class", "div-contenedor");
@@ -17,7 +18,7 @@ export function initSelect() {
 
       //creo label del select
       var labelEl = document.createElement("label");
-      labelEl.textContent = "label";
+      labelEl.textContent = variant;
       labelEl.setAttribute("class", "label__del__input");
       var styleLabelEl = document.createElement("style");
       styleLabelEl.textContent =
@@ -38,11 +39,12 @@ export function initSelect() {
       styleEl.setAttribute("type", "text/css");
       selectEl.setAttribute("id", "option");
       selectEl.innerHTML = `
-      <option value="opcion1" class="opcion_select">Opcion1</option>
-      <option value="opcion2" class="opcion_select">Opcion2</option>
-      <option value="opcion3" class="opcion_select">Opcion3</option>
+      <option value="opcion1" class="opcion_select">Piedra</option>
+      <option value="opcion2" class="opcion_select">Papapel</option>
+      <option value="opcion3" class="opcion_select">Tijeras</option>
      
      `;
+
       selectEl.appendChild(styleEl);
       //agrego elementos al shadow
       shadow.querySelector("div")?.appendChild(labelEl);

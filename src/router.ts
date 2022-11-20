@@ -1,13 +1,18 @@
-import { initPageA } from "./pages/page-a";
-import { initPageB } from "./pages/page-b";
+import { initWelcome } from "./pages/welcome";
+import { initStep1 } from "./pages/step1";
+import { initThankyou } from "./pages/thankyou";
 const routes = [
   {
-    path: /\/page-a/,
-    component: initPageA,
+    path: /\/welcome/,
+    component: initWelcome,
   },
   {
-    path: /\//,
-    component: initPageA,
+    path: /\/step-1/,
+    component: initStep1,
+  },
+  {
+    path: /\/thankyou/,
+    component: initThankyou,
   },
 ];
 export function initRouter(container: Element | null) {
@@ -27,7 +32,12 @@ export function initRouter(container: Element | null) {
       }
     }
   }
-
+  //ver
+  if (location.pathname == "/") {
+    goTo("/welcome");
+  } else {
+    handleRoute(location.pathname);
+  }
   window.onpopstate = function () {
     handleRoute(location.pathname);
   };

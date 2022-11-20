@@ -6,7 +6,7 @@ export function initLabelInput() {
     }
     render() {
       var shadow = this.attachShadow({ mode: "open" });
-
+      var variant = this.getAttribute("variant") || "label";
       var divEl = document.createElement("div");
       divEl.setAttribute("class", "div-contenedor");
       var styleInputName = document.createElement("style");
@@ -16,11 +16,11 @@ export function initLabelInput() {
       shadow.appendChild(divEl);
 
       var labelEl = document.createElement("label");
-      labelEl.textContent = "label";
+      labelEl.textContent = variant;
       labelEl.setAttribute("class", "label__del__input");
       var styleLabelEl = document.createElement("style");
       styleLabelEl.textContent =
-        ".label__del__input{width:122px;height:23px;font-family: 'Roboto';font-style: normal;font-weight: 400;font-size: 18px;line-height: 21px;color: #000000;}";
+        ".label__del__input{width:100%;height:23px;font-family: 'Roboto';font-style: normal;font-weight: 400;font-size: 18px;line-height: 21px;color: #000000;}";
       labelEl.appendChild(styleLabelEl);
       labelEl.setAttribute("for", "fname");
 

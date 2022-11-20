@@ -6,9 +6,9 @@ export function initH4() {
     }
     render() {
       var shadow = this.attachShadow({ mode: "open" });
-
+      var variant = this.getAttribute("variant") || "Body - Poppins - 18px";
       var h4El = document.createElement("h4");
-      h4El.textContent = "Body - Poppins - 18px ";
+      h4El.textContent = variant;
       h4El.setAttribute("class", "h4-comp");
       var styleh4El = document.createElement("style");
       styleh4El.textContent =

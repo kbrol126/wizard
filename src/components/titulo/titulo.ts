@@ -5,10 +5,12 @@ export function initTitulo() {
       this.render();
     }
     render() {
+      var variant =
+        this.getAttribute("variant") || "Título - Poppins - 52px - Bold";
       var shadow = this.attachShadow({ mode: "open" });
 
       var tituloEl = document.createElement("h1");
-      tituloEl.textContent = "Título - Poppins - 52px - Bold";
+      tituloEl.textContent = variant;
       tituloEl.setAttribute("class", "titulo");
       var styletituloEl = document.createElement("style");
       styletituloEl.textContent =
