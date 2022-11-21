@@ -9,9 +9,10 @@ export function initThankyou(params) {
 
    `;
 
-  // div.addEventListener("click", () => {
-  //   params.goTo("/page-b");
-  // });
+  var button = div.querySelector("button-comp");
+  button?.addEventListener("click", () => {
+    params.goTo("/welcome");
+  });
 
   return div;
 }

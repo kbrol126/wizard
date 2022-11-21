@@ -7,6 +7,7 @@ export function initLabelInput() {
     render() {
       var shadow = this.attachShadow({ mode: "open" });
       var variant = this.getAttribute("variant") || "label";
+
       var divEl = document.createElement("div");
       divEl.setAttribute("class", "div-contenedor");
       var styleInputName = document.createElement("style");
@@ -31,9 +32,11 @@ export function initLabelInput() {
         ".input{box-sizing: border-box;Width:100%;Height:55px;border: 2px solid #000000;border-radius: 4px;padding:0 3px;margin:0}";
       inputEl.appendChild(styleInputEl);
       inputEl.setAttribute("id", "fname");
-      inputEl.setAttribute("type", "text");
+      var typeInput = this.getAttribute("type") || "text";
+      inputEl.setAttribute("type", typeInput);
       inputEl.setAttribute("name", "name");
-      inputEl.setAttribute("placeholder", "Campo de texto");
+      var textoParaInput = this.getAttribute("placeholder") || "Campo de Texto";
+      inputEl.setAttribute("placeholder", textoParaInput);
 
       shadow.querySelector("div")?.appendChild(labelEl);
       shadow.querySelector("div")?.appendChild(inputEl);
