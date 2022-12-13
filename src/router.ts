@@ -1,21 +1,28 @@
 import { initWelcome } from "./pages/welcome";
 import { initStep1 } from "./pages/step1";
-import { initThankyou } from "./pages/thankyou";
+
 const routes = [
   {
     path: /\/welcome/,
     component: initWelcome,
   },
   {
-    path: /\/step-1/,
+    path: /\/form/,
     component: initStep1,
   },
-  {
-    path: /\/thankyou/,
-    component: initThankyou,
-  },
 ];
+
 export function initRouter(container: Element | null) {
+  window.onpopstate = function () {
+    handleRoute(location.pathname);
+  };
+
+  if (location.pathname == "/") {
+    goTo("/welcome");
+  } else {
+    handleRoute(location.pathname);
+  }
+
   handleRoute(location.pathname);
   function goTo(path) {
     history.pushState({}, "", path);
@@ -32,13 +39,4 @@ export function initRouter(container: Element | null) {
       }
     }
   }
-  //ver
-  if (location.pathname == "/") {
-    goTo("/welcome");
-  } else {
-    handleRoute(location.pathname);
-  }
-  window.onpopstate = function () {
-    handleRoute(location.pathname);
-  };
 }

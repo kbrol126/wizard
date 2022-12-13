@@ -5,7 +5,7 @@ export function initSelect() {
       this.render();
     }
     render() {
-      var shadow = this.attachShadow({ mode: "open" });
+      // var shadow = this.attachShadow({ mode: "open" });
       var variant = this.getAttribute("variant") || "label";
       //creo div contenedor
       var divEl = document.createElement("div");
@@ -13,8 +13,8 @@ export function initSelect() {
       var styleInputName = document.createElement("style");
       styleInputName.textContent =
         ".div-contenedor{box-sizing: border-box;width:242px;min-height:83px; display: flex; flex-direction: column;gap: 5px;margin-top:26px}";
-      shadow.appendChild(styleInputName);
-      shadow.appendChild(divEl);
+      this.appendChild(styleInputName);
+      this.appendChild(divEl);
 
       //creo label del select
       var labelEl = document.createElement("label");
@@ -22,7 +22,7 @@ export function initSelect() {
       labelEl.setAttribute("class", "label__del__input");
       var styleLabelEl = document.createElement("style");
       styleLabelEl.textContent =
-        ".label__del__input{width:122px;height:23px;font-family: 'Roboto';font-style: normal;font-weight: 400;font-size: 18px;line-height: 21px;color: #000000;}";
+        ".label__del__input{min-width:122px;height:23px;font-family: 'Roboto';font-style: normal;font-weight: 400;font-size: 18px;line-height: 21px;color: #000000;}";
       labelEl.appendChild(styleLabelEl);
       labelEl.setAttribute("for", "fname");
 
@@ -39,16 +39,16 @@ export function initSelect() {
       styleEl.setAttribute("type", "text/css");
       selectEl.setAttribute("id", "option");
       selectEl.innerHTML = `
-      <option value="opcion1" class="opcion_select">Piedra</option>
-      <option value="opcion2" class="opcion_select">Papapel</option>
-      <option value="opcion3" class="opcion_select">Tijeras</option>
+      <option value="Piedra" class="opcion_select">Piedra</option>
+      <option value="Papel" class="opcion_select">Papel</option>
+      <option value="Tijeras" class="opcion_select">Tijeras</option>
      
      `;
 
       selectEl.appendChild(styleEl);
       //agrego elementos al shadow
-      shadow.querySelector("div")?.appendChild(labelEl);
-      shadow.querySelector("div")?.appendChild(selectEl);
+      this.querySelector("div")?.appendChild(labelEl);
+      this.querySelector("div")?.appendChild(selectEl);
     }
   }
   customElements.define("select-comp", Selectclass);

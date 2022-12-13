@@ -1,5 +1,5 @@
 {
-  "name": "pages-and-components",
+  "name": "wizard",
   "source": "src/index.html",
   "scripts": {
     "dev": "parcel",

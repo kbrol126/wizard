@@ -21,7 +21,7 @@ export function initLabelInput() {
       labelEl.setAttribute("class", "label__del__input");
       var styleLabelEl = document.createElement("style");
       styleLabelEl.textContent =
-        ".label__del__input{width:100%;height:23px;font-family: 'Roboto';font-style: normal;font-weight: 400;font-size: 18px;line-height: 21px;color: #000000;}";
+        ".label__del__input{min-width:100%;height:23px;font-family: 'Roboto';font-style: normal;font-weight: 400;font-size: 18px;line-height: 21px;color: #000000;}";
       labelEl.appendChild(styleLabelEl);
       labelEl.setAttribute("for", "fname");
 
